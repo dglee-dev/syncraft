@@ -1,3 +1,4 @@
+import Item from "@/components/Item";
 import { getSourceList } from "@/lib/source";
 
 export default async function Home() {
@@ -15,17 +16,13 @@ export default async function Home() {
 
           <ul>
             {sourceList.map((source, index) => {
-              return (
-                <li key={source + index} className="text-sm mb-[0.2em]">
-                  {source}
-                </li>
-              );
+              return <Item key={source + index} title={source} />;
             })}
           </ul>
         </div>
 
         <div className="flex-1 p-[1em]">
-          <h3>변환된 리스트</h3>
+          <h3>선택된 리스트</h3>
         </div>
       </div>
     </div>
