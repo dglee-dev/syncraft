@@ -10,7 +10,7 @@ const Checkbox = ({
   children,
   onChange,
 }: {
-  checkedDefault: boolean;
+  checkedDefault?: boolean;
   children?: React.ReactNode;
   onChange?: (checked: boolean) => void;
 }) => {

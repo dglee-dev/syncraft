@@ -1,11 +1,15 @@
+"use client";
+
 import React from "react";
 
 import List from "@/components/common/List";
-import { getSourceList } from "@/lib/source";
+import Checkbox from "@/components/common/checkbox";
 
-const SourceList = async () => {
-  const sourceList = await getSourceList();
-
+const SourceList = ({
+  sourceList,
+}: {
+  sourceList: Array<string>;
+}) => {
   return (
     <List.Container>
       {sourceList.map((sourceItem, index) => {
@@ -13,6 +17,14 @@ const SourceList = async () => {
           <List.Item
             key={sourceItem + index}
             title={sourceItem}
+            checkbox={
+              <Checkbox
+                checkedDefault={false}
+                onChange={() => {
+                  console.log(sourceItem);
+                }}
+              />
+            }
           />
         );
       })}

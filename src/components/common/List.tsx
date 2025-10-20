@@ -1,6 +1,5 @@
-import React from "react";
 import clsx from "clsx";
-import Checkbox from "@/components/common/checkbox";
+import React from "react";
 
 const List = () => {};
 
@@ -12,7 +11,13 @@ List.Container = ({
   return <ul>{children}</ul>;
 };
 
-List.Item = ({ title }: { title: string }) => {
+List.Item = ({
+  title,
+  checkbox,
+}: {
+  title: string;
+  checkbox: React.ReactElement;
+}) => {
   return (
     <li
       className={clsx(
@@ -21,7 +26,8 @@ List.Item = ({ title }: { title: string }) => {
       )}
     >
       <span>{title}</span>
-      <Checkbox checkedDefault={false}></Checkbox>
+
+      {checkbox}
     </li>
   );
 };
