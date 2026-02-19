@@ -8,7 +8,11 @@ List.Container = ({
 }: {
   children: React.ReactNode;
 }) => {
-  return <ul>{children}</ul>;
+  return (
+    <ul className="flex-1 min-h-0 overflow-y-scroll">
+      {children}
+    </ul>
+  );
 };
 
 List.Item = ({
@@ -21,8 +25,12 @@ List.Item = ({
   return (
     <li
       className={clsx(
-        "text-sm mb-[0.2em]",
-        "flex items-center justify-between"
+        "p-2 px-3 pl-2",
+        "hover:bg-amber-100",
+        "border-b-1 border-b-amber-200",
+        "flex items-center justify-between",
+        "cursor-pointer select-none",
+        "text-sm",
       )}
     >
       <span>{title}</span>

@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+} from "next/font/google";
+import clsx from "clsx";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +31,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <h1
+          className={clsx(
+            "h-[var(--app-header-height)]",
+            "p-3 bg-gray-600 font-bold text-white",
+          )}
+        >
+          sync-raft
+        </h1>
+
         {children}
       </body>
     </html>
