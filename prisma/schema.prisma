@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model S3Credential {
+  id               Int      @id @default(1)
+  bucket           String
+  region           String
+  prefix           String
+  accessKeyId      String
+  secretAccessKey  String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("s3_credential")
+}
