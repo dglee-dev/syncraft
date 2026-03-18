@@ -4,6 +4,7 @@ import {
   Geist_Mono,
 } from "next/font/google";
 import clsx from "clsx";
+import { OverlayProvider } from "overlay-kit";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,7 +41,9 @@ export default function RootLayout({
           sync-raft
         </h1>
 
-        {children}
+        <OverlayProvider>
+          {children}
+        </OverlayProvider>
       </body>
     </html>
   );
